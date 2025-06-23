@@ -1,0 +1,38 @@
+# apiVersion: app/v1
+# kind: deployment
+# metadata:
+#   name: ngnix-deployment-priyesh
+# spec:
+#   replicaset: 2
+#   selector:
+#     matchLabels:
+#       app: ngnix
+#       # deployment.yaml
+
+
+
+
+
+
+#-----------  To list the specification sof the Deployment  ---------------------
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment-priyesh
+spec:
+  # replicas: 2
+  replicas: 4    # AssignmentTask : scaling the deployment to 4 pods
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+#----------------   To list the specifications of pod   -----------------------
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
