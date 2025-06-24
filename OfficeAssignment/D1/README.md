@@ -1,4 +1,4 @@
-✅ Step-by-Step Assignment (as given):
+<!-- ✅ Step-by-Step Assignment (as given):
 ✅ Step 1: Create the Pod YAML
 You've already created this:
 
@@ -57,4 +57,59 @@ Describe pod (for debugging):
 bash
 Copy
 Edit
-kubectl describe pod nginx-pod
+kubectl describe pod nginx-pod -->
+
+
+
+<!--  -->
+
+# Assignment D1: Deploying NGINX Pod on Kubernetes – Summary
+
+### Objective
+
+Deploy a simple NGINX web server using a Kubernetes Pod definition file. This helped in understanding how individual containers run inside pods.
+
+---
+
+### I faced a few issues:
+
+- Initially typed `nginix` instead of `nginx` when checking logs, which led to "pod not found" errors.
+- Learned the importance of precise naming and spelling in `kubectl` commands.
+
+---
+
+## Steps Followed
+
+```bash
+kubectl apply -f pod.yaml
+kubectl get pods
+kubectl logs nginx-pod-priyesh
+kubectl describe pod nginx-pod-priyesh
+```
+
+---
+
+### 📸 Screenshots
+
+> ![Pod Created](./images/d1-pod-created.png)  
+> ![Pod Logs](./images/d1-pod-logs.png)  
+> ![Describe Pod](./images/d1-pod-describe.png)
+
+---
+
+### 📤 Output Samples
+
+```
+pod/nginx-pod-priyesh created
+
+NAME                READY   STATUS    RESTARTS   AGE
+nginx-pod-priyesh   1/1     Running   0          2m
+```
+
+---
+
+### Note
+
+```
+This was my first interaction with Kubernetes. It helped me understand pod lifecycle and logging basics. It also taught me how to debug failed pod creation using `describe` and `logs` commands.
+```
