@@ -43,8 +43,3 @@ nginx-deployment   2/2     2            2           1m
 
 ---
 
-### Note
-
-```
-This assignment showed me how Deployments help with pod scaling and self-healing. The ReplicaSet abstraction was also visible when inspecting the created resources.
-```

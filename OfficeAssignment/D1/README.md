@@ -108,8 +108,3 @@ nginx-pod-priyesh   1/1     Running   0          2m
 
 ---
 
-### Note
-
-```
-This was my first interaction with Kubernetes. It helped me understand pod lifecycle and logging basics. It also taught me how to debug failed pod creation using `describe` and `logs` commands.
-```

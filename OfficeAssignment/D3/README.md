@@ -40,9 +40,3 @@ nginx-service   NodePort   10.96.0.1      <none>        80:30080/TCP   10s
 ```
 
 ---
-
-### Note
-
-```
-This assignment helped me understand how networking works in Kubernetes. I also practiced accessing services using both port-forwarding and NodePort.
-```
