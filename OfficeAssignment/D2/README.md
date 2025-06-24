@@ -1,59 +1,50 @@
-Assignment : ngnix deployment
+# Assignment D2: NGINX Deployment on Kubernetes – Summary
 
-✅ Step 1: Apply the Deployment
-bash
-Copy
-Edit
+### Objective
+
+Create a scalable Deployment for NGINX instead of a single Pod. This introduces ReplicaSets and ensures the application stays available.
+
+---
+
+### I faced a few issues:
+
+- I had to ensure that the selector matched the pod template labels, otherwise, no pods would get created.
+
+---
+
+## Steps Followed
+
+```bash
 kubectl apply -f deployment.yaml
------------------------------ss
-
-2: Verify Deployment, ReplicaSet, and Pods
-bash
-Copy
-Edit
-kubectl get deployment
-kubectl get replicaset
+kubectl get deployments
+kubectl get rs
 kubectl get pods
--------------------------------ss
+kubectl describe deployment nginx-deployment
+```
 
+---
 
-3:   testing autohealing (feature of replica set)
-Delete one pod:
+### 📸 Screenshots
 
-bash
-Copy
-Edit
-kubectl delete pod <pod-name>
+> ![Deployment Created](./images/d2-deployment-created.png)  
+> ![Deployment Pods](./images/d2-pods.png)  
+> ![ReplicaSet](./images/d2-replicaset.png)
 
+---
 
-----------------------------------sss
+### 📤 Output Samples
 
+```
+deployment.apps/nginx-deployment created
 
+NAME               READY   UP-TO-DATE   AVAILABLE   AGE
+nginx-deployment   2/2     2            2           1m
+```
 
-Scale the Application
-Edit the replicas in deployment.yaml:
+---
 
-yaml
-Copy
-Edit
-replicas: 4
-Re-apply the file:
+### Note
 
-bash
-Copy
-Edit
-kubectl apply -f deployment.yaml
-Verify:
-
-bash
-Copy
-Edit
-kubectl get pods
-
-
---------------------------------------------ss
-Clean Up
-bash
-Copy
-Edit
-kubectl delete deployment nginx-deployment
+```
+This assignment showed me how Deployments help with pod scaling and self-healing. The ReplicaSet abstraction was also visible when inspecting the created resources.
+```
